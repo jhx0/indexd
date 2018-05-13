@@ -1,0 +1,5 @@
+This is a simple example as long as you have openssl installed.
+
+openssl s_client -connect localhost:7777
+
+Change the port and address accordingly.

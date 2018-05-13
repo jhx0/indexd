@@ -1,0 +1,9 @@
+{
+    "indexd_directory": "/tmp",
+    "acl": ["192.168.23.1", "192.168.23.11", "127.0.0.1"],
+    "address": "localhost",
+    "port": "7777",
+    "logfile": "/var/log/indexd.log",
+    "cert": "/etc/indexd/server.crt",
+    "key": "/etc/indexd/server.key"
+}

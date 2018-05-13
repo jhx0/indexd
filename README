@@ -1,0 +1,39 @@
+About
+======
+
+Indexd is a simple and secure daemon that makes it possible to send
+a recursive directory listing over TCP (TLS secured).
+
+Building
+=========
+
+Building Indexd is as simple as running:
+
+make
+
+The Indexd binary can be found in the build/ directory.
+
+Configuration
+==============
+
+Create /etc/indexd and put your altered config.json there, that's it.
+Don't forget to change the cert/key path and everything else that you
+wan't to alter.
+(Have a look at examples/config.json - the format is pretty simple)
+
+Hint: "indexd_directory" specifies the directory to be indexed.
+
+scripts/ holds a simple bash script to generate the required cert/key
+pair for indexd.
+
+Usage
+======
+
+Easy, just run the indexd executable and be sure to have setup the 
+above mentioned config json file.
+
+You can use pretty much anything as a client that receives data, really.
+(As long as you establish a TLS connection to the given address/port.
+check out the examples directory for a quick and dirty example.
+
+...the rest is history :^) Enjoy!

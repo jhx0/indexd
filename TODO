@@ -1,0 +1,22 @@
+/*
+   TODO:
+       ~ cache: check if listing has changed, if not, send that what you have buffered
+       - tls/ssl
+       - auth
+       - clean the code
+       - makefile
+       - debian package
+       - systemd service
+	   - limit connections
+	   - priv sep?
+	   - chdir
+	   - print pid in log
+	   - print pid in goroutine
+	   - log: Dec 18 16:47:47 xps kernel: [259196.989163] xhci_hcd 0000:39:00.0: Cannot set link state.
+	   - check if logfile right permissions
+	   - generate stats and time it took to gen them.
+	   - try to make cache functionality, we dont need to get the listing all the time again
+	   - cleanup function?
+	   - "-c" option to give path to config
+	   - put ip address as key in a map - would make the lookup process much faster
+*/
