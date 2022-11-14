@@ -5,7 +5,6 @@ import (
 	"encoding/json"
 	"fmt"
 	"io"
-	"io/ioutil"
 	"log"
 	"net"
 	"os"
@@ -155,7 +154,7 @@ func do(path string, info os.FileInfo, _ error) error {
 }
 
 func parseConfig() {
-	buf, readErr := ioutil.ReadFile(configPath)
+	buf, readErr := os.ReadFile(configPath)
 	checkError("parseConfig() ReadFile", "ReadFile error", readErr)
 
 	jsonErr := json.Unmarshal(buf, &conf)
