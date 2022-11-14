@@ -1,4 +1,4 @@
-package main
+package service
 
 import (
 	"crypto/tls"
@@ -19,7 +19,7 @@ import (
 var isDebug = false
 
 const prgName = "indexd"
-const prgVersion = "0.1"
+const prgVersion = "0.1.1"
 
 const helpMsg = `
 USAGE: indexd [ -v | -h ]
@@ -28,9 +28,7 @@ USAGE: indexd [ -v | -h ]
 	-h		show this help message
 	-d		turn on debugging
 
-Copyright (2018) Julian "jhx" Weber (jhx0x00@gmail.com)
-If there are any suggestions or in general feedback, send
-me a mail to the given address above. enjoy! :^)
+Copyright (2018 - 2022) jhx
 `
 
 var logfile os.File
@@ -46,8 +44,6 @@ type indexdConfig struct {
 	Cert            string   `json:"cert"`
 	Key             string   `json:"key"`
 }
-
-func (addr indexdConfig) getAddrPair() string { return addr.Address + ":" + addr.Port }
 
 var listing string
 var conf indexdConfig
@@ -237,7 +233,7 @@ func sigHandler(sig chan os.Signal) {
 	os.Exit(0)
 }
 
-func main() {
+func Run() {
 	sig := make(chan os.Signal, 1)
 	signal.Notify(sig, os.Interrupt, syscall.SIGINT, syscall.SIGTERM)
 
